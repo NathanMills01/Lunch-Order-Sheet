@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+
+}
+body{
+   background-color: #00e5ff; 
+}
+
+.card {
+ width: 300px;            /* or max-width: 300px; */
+  margin: 20px auto;       /* auto makes it centered horizontally */
+  padding: 15px;           /* optional, makes content not touch edges */
+  background: white;       /* for visibility */
+  border-radius: 8px;      /* optional, rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional, soft shadow */
+}
+
+#TopTitle{
+    padding: 50px;
+    text-align: center;
+}
+
+#cardscontainer{
+ color: white;
+}
+
+input{
+  display: block;     /* makes the input take a full line */
+  margin: 0 auto;     /* centers it horizontally */
+  margin-bottom: 5px;
+  width: 200px;       /* give it a width so auto works */
+  border-radius: 5px;
+  padding: 5px;
+}
+#cardform{
+    text-align: center;
+}
+
+.wrapper{
+    width: 80vmin;
+    padding: 50px 40px;
+    background-color: #15161a;
+    position: absolute;
+    transform: translate(-50% -50%);
+    top: 20%;
+    left: 30%;
+    border-radius: 5px;
+    box-shadow: 20px 20px 40px rgba(97, 63, 0, 0,4);
+}
+span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+
+}
+p{
+
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 35px;
+    margin: 30px 0;
+    opacity: 0;
+
+}
+.fade{
+    opacity: 1;
+    transition: opacity 1.5s;
+
+}
+button{
+    display: block;
+    background-color: #fab22e;
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    color: #171721;
+    font-weight: 600px;
+    padding: 12px 25px;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
