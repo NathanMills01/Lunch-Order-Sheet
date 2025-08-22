@@ -1,44 +1,38 @@
 //console.log("If you're seeing this, then your app is running");
-const cards = []; // stores all card objects
+const cards = []; // store card objects
 const form = document.getElementById("cardForm");
 const cardsContainer = document.getElementById("cardsContainer");
+
+// "database" of dropdown values → display text
+const times = {
+  JuniorLunch: "Junior Lunch - 11 AM",
+  SeniorLunch: "Senior Lunch - 12 PM"
+};
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
 
+  // grab inputs
   const title = document.getElementById("title").value;
   const description = document.getElementById("description").value;
-  const time = document.getElementById("time").value; // grab time
+  const dropdown = document.getElementById("itemDropdown");
+  const time = times[dropdown.value]; // look up the text based on the dropdown value
 
-  // create a card object and store it
-  const newCard = { title, description, time, triggered: false };
+
+  // create card object
+  const newCard = { title, description, time };
   cards.push(newCard);
 
-  // create the DOM element
+  // create card element in the DOM
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
   cardDiv.innerHTML = `
-    <h2>${title}</h2>
+    <p>${title}</p>
     <p>${description}</p>
-    <p>Time: ${time}</p>
+    <p>${time}</p>
   `;
+
   cardsContainer.appendChild(cardDiv);
 
-  form.reset();
+  form.reset(); // clear inputs after submission
 });
-
-// optional: check card times and play sound
-const audio = new Audio("your-sound-file.mp3");
-
-setInterval(() => {
-  const now = new Date();
-  const currentTime = now.getHours().toString().padStart(2,'0') + ':' +
-                      now.getMinutes().toString().padStart(2,'0');
-
-  cards.forEach(card => {
-    if (!card.triggered && card.time === currentTime) {
-      audio.play();        // play sound
-      card.triggered = true; // prevent repeated triggers
-    }
-  });
-}, 1000);

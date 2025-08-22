@@ -14,7 +14,13 @@
   <form id="cardForm">
     <input type="text" id="title" placeholder="Customer" required>
     <input type="text" id="description" placeholder="Lunch" required>
-    <input type= "time" id="time" required>
+    <!-- Dropdown menu -->
+<select id="itemDropdown" required>
+  <option value="">-- Select an item --</option>
+  <option value="JuniorLunch">Junior Lunch - 11 AM</option>
+  <option value="SeniorLunch">Senior Lunch - 12 PM</option>
+</select>
+
     <button type="submit">Add</button>
   </form>
 
